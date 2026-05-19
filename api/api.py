@@ -1,33 +1,21 @@
-from fastapi import FastAPI
-import os
+@app.get("/analise")
+def analise(temp: float, umidade: float):
+    
+    if temp > 35 and umidade < 30:
+        risco = "ALTO 🔥"
+        recomendacao = "Irrigar imediatamente"
+    
+    elif temp > 30:
+        risco = "MÉDIO ⚠️"
+        recomendacao = "Monitorar irrigação"
+    
+    else:
+        risco = "BAIXO ✅"
+        recomendacao = "Condições ideais"
 
-app = FastAPI()
-
-# ================================
-# ROTA PRINCIPAL
-# ================================
-@app.get("/")
-def home():
     return {
-        "status": "online",
-        "message": "API IA Vision FarmTech rodando 🚀"
-    }
-
-
-# ================================
-# TESTE DE SAÚDE
-# ================================
-@app.get("/health")
-def health_check():
-    return {"health": "ok"}
-
-
-# ================================
-# EXEMPLO DE ALERTA (SIMULADO)
-# ================================
-@app.get("/alerta")
-def alerta():
-    return {
-        "alerta": "Temperatura elevada detectada!",
-        "nivel": "alto"
+        "temperatura": temp,
+        "umidade": umidade,
+        "risco": risco,
+        "acao": recomendacao
     }
