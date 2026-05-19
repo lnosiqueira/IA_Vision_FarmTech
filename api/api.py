@@ -1,5 +1,6 @@
 @app.get("/analise")
 def analise(temp: float, umidade: float):
+    return {"ok": True}
     
     if temp > 35 and umidade < 30:
         risco = "ALTO 🔥"
