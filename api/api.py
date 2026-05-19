@@ -1,6 +1,24 @@
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return {"status": "online", "message": "API IA Vision FarmTech rodando 🚀"}
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+@app.get("/alerta")
+def alerta():
+    return {
+        "alerta": "Temperatura elevada detectada!",
+        "nivel": "alto"
+    }
+
 @app.get("/analise")
 def analise(temp: float, umidade: float):
-    return {"ok": True}
     
     if temp > 35 and umidade < 30:
         risco = "ALTO 🔥"
