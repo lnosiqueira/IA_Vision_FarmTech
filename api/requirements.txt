@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+boto3
+oracledb
+requests
+python-dotenv
+streamlit
+pandas
+requests
+plotly
