@@ -1,9 +1,9 @@
 fastapi
 uvicorn[standard]
-boto3
 oracledb
-requests
 python-dotenv
+requests
 streamlit
+boto3
+twilio
 pandas
-plotly
