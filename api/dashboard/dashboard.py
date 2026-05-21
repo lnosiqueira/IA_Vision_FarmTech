@@ -25,21 +25,66 @@ st.markdown("""
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* Corte branco do topo — esconde header e toolbar do Streamlit */
+[data-testid="stHeader"] { display: none !important; }
+[data-testid="stToolbar"] { display: none !important; }
+#MainMenu { display: none !important; }
+footer { display: none !important; }
+.stDeployButton { display: none !important; }
+
 html, body, [data-testid="stAppViewContainer"] {
     background-color: #0b0f1a !important;
     font-family: 'Inter', sans-serif;
     color: #e2e8f0;
 }
 
-[data-testid="stSidebar"] {
-    background-color: #0d1117 !important;
-    border-right: 1px solid #1a2744;
+[data-testid="stMainBlockContainer"] {
+    padding-top: 1.5rem !important;
 }
 
+/* Sidebar modernizada */
+[data-testid="stSidebar"] {
+    background-color: #080d14 !important;
+    border-right: 1px solid #0f2240;
+}
 [data-testid="stSidebar"] * { color: #94a3b8 !important; }
 [data-testid="stSidebar"] h1,
 [data-testid="stSidebar"] h2,
 [data-testid="stSidebar"] h3 { color: #22c55e !important; }
+
+/* Toggle modernizado */
+[data-testid="stToggle"] > label {
+    background: #0f1e2e !important;
+    border: 1px solid #1a3a5c !important;
+    border-radius: 8px !important;
+    padding: 6px 10px !important;
+}
+
+/* Slider modernizado */
+[data-testid="stSlider"] {
+    background: #0f1e2e !important;
+    border: 1px solid #1a3a5c !important;
+    border-radius: 8px !important;
+    padding: 8px 10px !important;
+}
+[data-testid="stSlider"] [data-baseweb="slider"] [role="slider"] {
+    background: #22c55e !important;
+    border-color: #22c55e !important;
+}
+
+/* Selectbox modernizado */
+[data-testid="stSelectbox"] > div > div {
+    background: #0f1e2e !important;
+    border: 1px solid #1a3a5c !important;
+    border-radius: 8px !important;
+    color: #94a3b8 !important;
+}
+
+/* Divisor sidebar */
+[data-testid="stSidebar"] hr {
+    border-color: #0f2240 !important;
+    margin: 12px 0 !important;
+}
 
 /* Cards métrica */
 [data-testid="metric-container"] {
