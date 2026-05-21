@@ -7,3 +7,4 @@ streamlit
 boto3
 twilio
 pandas
+plotly"plotly" 
