@@ -8,13 +8,13 @@ import boto3
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
-
 # ORACLE THICK MODE (exigido pelo Oracle FIAP)
 try:
     oracledb.init_oracle_client()
 except Exception:
     pass  # fallback thin mode
+
+load_dotenv()
 
 app = FastAPI(title="FarmTech Vision IA", version="2.0.0")
 
